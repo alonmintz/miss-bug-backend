@@ -12,12 +12,26 @@ export const bugController = {
 const VISITED_BUGS_LIMIT = 3;
 
 async function getBugs(req, res) {
-  const filterBy = {};
+  const {
+    txt,
+    minSeverity,
+    labels,
+    sortBy,
+    sortDir = "1",
+    pageIdx,
+  } = req.query;
+  const filterBy = {
+    txt,
+    minSeverity,
+    labels,
+    sortBy,
+    sortDir: +sortDir,
+    pageIdx: +pageIdx,
+  };
 
   try {
     const bugs = await bugService.query(filterBy);
     res.status(200).send(bugs);
-    console.log({ bugs });
   } catch (err) {
     loggerService.error(`Couldn't get bugs`, err);
     res.status(500).send(`Couldn't get bugs`);
@@ -27,9 +41,9 @@ async function getBugs(req, res) {
 async function getBug(req, res) {
   const { bugId } = req.params;
   const visitedBugs = req.cookies.visitedBugs || [];
-  //   if (visitedBugs.length >= 3) {
-  //     return res.status(401).send("no no no");
-  //   }
+  if (visitedBugs.length >= 3) {
+    return res.status(401).send("no no no");
+  }
   try {
     const bug = await bugService.getById(bugId);
     res.status(200).send(bug);
