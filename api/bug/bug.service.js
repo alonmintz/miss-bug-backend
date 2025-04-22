@@ -1,3 +1,4 @@
+import { loggerService } from "../../services/logger.service.js";
 import { makeId, readJsonFile, writeJsonFile } from "../../services/utils.js";
 
 const bugs = readJsonFile("./data/bugs.json");
@@ -47,16 +48,15 @@ async function query(filterBy) {
         }
       });
     }
-    console.log("out: ", filterBy.pageIdx);
 
     if (filterBy.pageIdx >= 0) {
-      console.log("here: ", filterBy.pageIdx);
       const startIdx = filterBy.pageIdx * BUGS_PER_PAGE;
       bugsToDisplay = bugsToDisplay.slice(startIdx, startIdx + BUGS_PER_PAGE);
     }
 
     return bugsToDisplay;
   } catch (err) {
+    loggerService.error("bugService[query] : ", err);
     throw err;
   }
 }
@@ -67,6 +67,7 @@ async function getById(bugId) {
     if (!bug) throw new Error("Cannot find bug");
     return bug;
   } catch (err) {
+    loggerService.error("bugService[getById] : ", err);
     throw err;
   }
 }
@@ -78,7 +79,7 @@ async function remove(bugId) {
     bugs.splice(bugIdx, 1);
     await _saveBugsToFile();
   } catch (err) {
-    console.log("err:", err);
+    loggerService.error("bugService[remove] : ", err);
     throw err;
   }
 }
@@ -96,6 +97,7 @@ async function save(bugToSave) {
     await _saveBugsToFile();
     return bugToSave;
   } catch (err) {
+    loggerService.error("bugService[save] : ", err);
     throw err;
   }
 }

@@ -40,12 +40,14 @@ async function getBugs(req, res) {
 
 async function getBug(req, res) {
   const { bugId } = req.params;
-  const visitedBugs = req.cookies.visitedBugs || [];
-  if (visitedBugs.length >= 3) {
-    return res.status(401).send("no no no");
-  }
   try {
+    const visitedBugIds = req.cookies.visitedBugIds || [];
+    if (!visitedBugIds.includes(bugId)) visitedBugIds.push(bugId);
+    if (visitedBugIds.length > VISITED_BUGS_LIMIT)
+      return res.status(403).send("no no no");
+
     const bug = await bugService.getById(bugId);
+    res.cookie("visitedBugIds", visitedBugIds, { maxAge: 1000 * 7 });
     res.status(200).send(bug);
   } catch (err) {
     loggerService.error(`Couldn't get bug ${bugId}`, err);

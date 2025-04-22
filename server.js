@@ -15,7 +15,10 @@ app.use(cookieParser());
 app.use(express.json());
 
 import { bugRoutes } from "./api/bug/bug.routes.js";
+import { userRoutes } from "./api/user/user.routes.js";
+
 app.use("/api/bug", bugRoutes);
+app.use("/api/user", userRoutes);
 
 const port = 3030;
 app.listen(port, () => console.log(`Server ready a port ${port}`));
