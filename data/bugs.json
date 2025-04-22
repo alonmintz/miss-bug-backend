@@ -1,0 +1,134 @@
+[
+    {
+        "_id": "UxZtXi",
+        "title": "test123",
+        "description": "test",
+        "severity": 3,
+        "createdAt": 1745319581215,
+        "labels": [
+            "critical",
+            "need-CR",
+            "dev-branch"
+        ]
+    },
+    {
+        "_id": "b101",
+        "title": "Cannot save a Car",
+        "description": "problem when clicking Save",
+        "severity": 3,
+        "createdAt": 1542107359454,
+        "labels": [
+            "critical",
+            "need-CR",
+            "dev-branch"
+        ]
+    },
+    {
+        "_id": "b102",
+        "title": "Cannot update a Car",
+        "description": "problem when attempting to update a car's details",
+        "severity": 2,
+        "createdAt": 1542107359454,
+        "labels": [
+            "critical",
+            "backend",
+            "dev-branch"
+        ]
+    },
+    {
+        "_id": "b103",
+        "title": "Cannot remove a Car",
+        "description": "error when deleting a car from the system",
+        "severity": 4,
+        "createdAt": 1542107359454,
+        "labels": [
+            "critical",
+            "prod",
+            "urgent"
+        ]
+    },
+    {
+        "_id": "b104",
+        "title": "Cannot save a Car",
+        "description": "problem when clicking Save",
+        "severity": 1,
+        "createdAt": 1542107359454,
+        "labels": [
+            "low-priority",
+            "frontend",
+            "regression"
+        ]
+    },
+    {
+        "_id": "b105",
+        "title": "Car image upload fails",
+        "description": "uploading an image results in 500 server error",
+        "severity": 2,
+        "createdAt": 1542107359454,
+        "labels": [
+            "media",
+            "backend",
+            "urgent"
+        ]
+    },
+    {
+        "_id": "b106",
+        "title": "Car model not displaying",
+        "description": "model name missing from car details view",
+        "severity": 3,
+        "createdAt": 1542107359454,
+        "labels": [
+            "frontend",
+            "qa",
+            "display-issue"
+        ]
+    },
+    {
+        "_id": "b107",
+        "title": "Search returns incorrect results",
+        "description": "searching cars by brand returns unrelated items",
+        "severity": 4,
+        "createdAt": 1542107359454,
+        "labels": [
+            "search",
+            "logic-bug",
+            "frontend"
+        ]
+    },
+    {
+        "_id": "b108",
+        "title": "Cannot assign car to user",
+        "description": "system throws error when assigning ownership",
+        "severity": 2,
+        "createdAt": 1542107359454,
+        "labels": [
+            "backend",
+            "validation",
+            "dev-branch"
+        ]
+    },
+    {
+        "_id": "b109",
+        "title": "Mileage field accepts text",
+        "description": "mileage input allows letters instead of numbers",
+        "severity": 1,
+        "createdAt": 1542107359454,
+        "labels": [
+            "validation",
+            "form",
+            "frontend"
+        ]
+    },
+    {
+        "_id": "b110",
+        "title": "Login fails after password reset",
+        "description": "user cannot log in after resetting their password",
+        "severity": 5,
+        "createdAt": 1542107359454,
+        "labels": [
+            "critical",
+            "auth",
+            "prod"
+        ]
+    }
+]

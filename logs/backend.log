@@ -1,0 +1,4 @@
+22.4.2025, 13:26:56 - ERROR - Couldn't get bugs | TypeError: req.status is not a function
+22.4.2025, 13:26:58 - ERROR - Couldn't get bugs | TypeError: req.status is not a function
+22.4.2025, 13:34:27 - ERROR - Couldn't remove bug LswvNr | ReferenceError: bug is not defined
+22.4.2025, 13:42:30 - ERROR - Couldn't remove bug I2Dewp | Error: Cannot find bug
