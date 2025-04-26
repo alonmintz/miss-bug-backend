@@ -8,6 +8,7 @@ export const userService = {
   getById,
   remove,
   save,
+  getByUsername,
 };
 
 async function query(filterBy) {
@@ -68,6 +69,17 @@ async function getById(userId) {
     return user;
   } catch (err) {
     loggerService.error("userService[getById] : ", err);
+    throw err;
+  }
+}
+
+async function getByUsername(username) {
+  try {
+    const user = users.find((user) => user.username === username);
+    // if (!user) throw `User not found by username : ${username}`
+    return user;
+  } catch (err) {
+    loggerService.error("userService[getByUsername] : ", err);
     throw err;
   }
 }

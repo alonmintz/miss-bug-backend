@@ -2,3 +2,10 @@
 22.4.2025, 13:26:58 - ERROR - Couldn't get bugs | TypeError: req.status is not a function
 22.4.2025, 13:34:27 - ERROR - Couldn't remove bug LswvNr | ReferenceError: bug is not defined
 22.4.2025, 13:42:30 - ERROR - Couldn't remove bug I2Dewp | Error: Cannot find bug
+26.4.2025, 19:46:50 - ERROR - Failed to Login NaN
+26.4.2025, 19:50:13 - INFO - User login:  | {"_id":"u101","fullname":"Puki Norma","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000,"isAdmin":false}
+26.4.2025, 19:50:48 - DEBUG - auth.service - signup with username: Mintz, fullname: Alon
+26.4.2025, 19:50:48 - DEBUG - auth.route - new account created: {"username":"Mintz","password":"$2b$10$wG1PFjTxzvdDqyWEzDbsdei1KlDP6ZIBGTme6mCyavOPmEAiBgtBy","fullname":"Alon","_id":"k0DmAk"}
+26.4.2025, 19:50:48 - INFO - User signup: | {"_id":"k0DmAk","fullname":"Alon"}
+26.4.2025, 19:51:30 - INFO - User login:  | {"_id":"k0DmAk","fullname":"Alon"}
+26.4.2025, 19:54:53 - INFO - User login:  | {"_id":"k0DmAk","fullname":"Alon"}
